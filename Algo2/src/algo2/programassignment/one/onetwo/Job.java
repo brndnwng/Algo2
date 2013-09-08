@@ -1,4 +1,4 @@
-package algo2.programassignment.one;
+package algo2.programassignment.one.onetwo;
 
 public class Job {
 

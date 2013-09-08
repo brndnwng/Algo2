@@ -1,4 +1,4 @@
-package algo2.programassignment.one;
+package algo2.programassignment.one.onetwo;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
