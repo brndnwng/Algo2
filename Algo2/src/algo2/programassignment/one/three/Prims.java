@@ -11,6 +11,7 @@ public class Prims {
 	PriorityQueue<Edge> adjacentEdges = new PriorityQueue<Edge>(100, new EdgeComparator());
 	List<Edge> mst = new ArrayList<Edge>();
 	
+	//sort priorityQueue by ascending weight
 	public static class EdgeComparator implements Comparator<Edge>{
 
 		@Override
@@ -25,7 +26,17 @@ public class Prims {
 		}
 		
 	}
-	
+	/*
+	 * pick the first node from graph
+	 * add to the list of connected nodes
+	 * add all adjacent edges to a priority queue
+	 * take the minimum edge
+	 * check to see if endpoints of edge are in the list of connected nodes
+	 * if one of the nodes is not in that list, add that to the connected nodes list, add all adjacent edges to that new node
+	 * repeat until all edges visited
+	 * 
+	 * TODO: pick a random node, prune the heap for edges which will not result in a non-visited node
+	 */
 	public void primsAlgo(Graph gr){
 		Node n = gr.getNodes().get(0);
 		newGraph.add(n);
@@ -47,6 +58,7 @@ public class Prims {
 			}
 		}
 		
+		//Sum the cost of the MST
 		long cost = 0;
 		for(Edge e3 : mst){
 			cost += e3.getWeight();
